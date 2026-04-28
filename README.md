@@ -34,6 +34,29 @@ A modern, visually stunning food discovery web application with a glassmorphic d
 - **Modal Details**: Click any dish for expanded view with full details
 - **Lazy Loading**: Optimized image loading for better performance
 
+---
+## 🖼️ Website Preview
+
+![image1](previewimages/preview1.png)
+
+---
+
+![image2](previewimages/preview2.png)
+
+---
+
+![image3](previewimages/preview3.png)
+
+---
+
+![image4](previewimages/preview4.png)
+
+---
+
+![image5](previewimages/preview5.png)
+
+---
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -56,7 +79,8 @@ savor/
 ├── style.css           # All styles and theme variables
 ├── script.js           # JavaScript logic and interactions
 ├── Savor..png          # Favicon (add your own)
-└── README.md           # Documentation
+├── README.md           # Documentation
+└──previewimages        # screenshots of website
 ```
 ## 📖 Usage Guide
 
