@@ -53,53 +53,55 @@
 
     <main class="container">
         <div id="masonryGrid" class="masonry-grid">
-            </div>
-    <section class="events-section container">
-    <h2 class="section-title">Upcoming Events</h2>
-    <div class="events-grid">
-        <div class="event-card glass">
-            <div class="event-date">MAY 15</div>
-            <div class="event-info">
-                <h3>Jazz & Wine Night</h3>
-                <p>Live performance by the Blue Note Trio. Includes a 3-course tasting menu.</p>
-            </div>
         </div>
-        <div class="event-card glass">
-            <div class="event-date">JUNE 02</div>
-            <div class="event-info">
-                <h3>Sushi Masterclass</h3>
-                <p>Learn the art of rolling sushi from our head chef. Limited seats available.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section id="reservations" class="reservation-section container">
-    <div class="res-container glass">
-        <div class="res-text">
-            <h2>Book a Table</h2>
-            <p>Skip the wait and secure your spot for an unforgettable dining experience.</p>
-        </div>
-        <form id="reservationForm" class="res-form">
-            <div class="input-group">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Email Address" required>
+        <section class="events-section container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-grid">
+                <div class="event-card glass">
+                    <div class="event-date">MAY 15</div>
+                    <div class="event-info">
+                        <h3>Jazz & Wine Night</h3>
+                        <p>Live performance by the Blue Note Trio. Includes a 3-course tasting menu.</p>
+                    </div>
+                </div>
+                <div class="event-card glass">
+                    <div class="event-date">JUNE 02</div>
+                    <div class="event-info">
+                        <h3>Sushi Masterclass</h3>
+                        <p>Learn the art of rolling sushi from our head chef. Limited seats available.</p>
+                    </div>
+                </div>
             </div>
-            <div class="input-group">
-                <input type="date" required>
-                <select required>
-                    <option value="">Time Slot</option>
-                    <option>7:00 PM</option>
-                    <option>8:30 PM</option>
-                    <option>10:00 PM</option>
-                </select>
-            </div>
-            <button type="submit" class="order-btn">Confirm Reservation</button>
-        </form>
-    </div>
-</section>
-</main>
+        </section>
 
+        <section id="reservations" class="reservation-section container">
+            <div class="res-container glass">
+                <div class="res-text">
+                    <h2>Book a Table</h2>
+                    <p>Skip the wait and secure your spot for an unforgettable dining experience.</p>
+                </div>
+                <form id="reservationForm" class="res-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="date" required>
+                        <select required>
+                            <option value="">Time Slot</option>
+                            <option>7:00 PM</option>
+                            <option>8:30 PM</option>
+                            <option>10:00 PM</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="order-btn">Confirm Reservation</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Food Details Modal -->
     <div id="foodModal" class="modal">
         <div class="modal-content glass">
             <span class="close-btn">&times;</span>
@@ -110,7 +112,7 @@
                     <p class="modal-category" id="modalCategory">Category</p>
                     <p class="modal-desc">A delicious, perfectly prepared dish that will satisfy your cravings. Handcrafted with the finest ingredients and a touch of culinary magic.</p>
                     <div class="modal-meta">
-                        <span class="price" id="modalPrice">$0.00</span>
+                        <span class="price" id="modalPrice">₹0.00</span>
                         <span class="rating" id="modalRating"><i class="fa-solid fa-star"></i> 5.0</span>
                     </div>
                     <button class="order-btn glass">Order Now</button>
@@ -119,28 +121,69 @@
         </div>
     </div>
 
+    <!-- Payment Gateway Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="payment-modal-content glass">
+            <span class="close-payment">&times;</span>
+            <div class="payment-header">
+                <h2>💳 Payment</h2>
+                <div class="payment-total" id="paymentTotal">₹0.00</div>
+            </div>
+            <form id="paymentForm" class="payment-form">
+                <div class="form-group">
+                    <label for="cardName">Cardholder Name</label>
+                    <input type="text" id="cardName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                </div>
+                <div class="card-details">
+                    <div class="form-group">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="123" maxlength="3" required>
+                    </div>
+                </div>
+                <button type="submit" class="pay-btn">
+                    <i class="fa-solid fa-lock"></i> Pay Securely
+                </button>
+                <div class="payment-methods">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-amex"></i>
+                    <i class="fa-brands fa-google-pay"></i>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div id="toast" class="toast glass"></div>
 
-    <script src="script.js"></script>
     <div id="cartToggle" class="cart-btn-float glass">
-    <i class="fa-solid fa-shopping-basket"></i>
-    <span id="cartCount">0</span>
-</div>
+        <i class="fa-solid fa-shopping-basket"></i>
+        <span id="cartCount">0</span>
+    </div>
 
-<div id="cartSidebar" class="cart-sidebar glass">
-    <div class="cart-header">
-        <h2>Your Order</h2>
-        <span class="close-cart">&times;</span>
-    </div>
-    <div id="cartItems" class="cart-items-list">
+    <div id="cartSidebar" class="cart-sidebar glass">
+        <div class="cart-header">
+            <h2>Your Order</h2>
+            <span class="close-cart">&times;</span>
         </div>
-    <div class="cart-footer">
-        <div class="bill-row"><span>Subtotal</span> <span id="subtotal">$0.00</span></div>
-        <div class="bill-row"><span>GST (18%)</span> <span id="gstAmount">$0.00</span></div>
-        <hr>
-        <div class="bill-row total"><span>Total Bill</span> <span id="totalBill">$0.00</span></div>
-        <button class="checkout-btn">Proceed to Checkout</button>
+        <div id="cartItems" class="cart-items-list">
+        </div>
+        <div class="cart-footer">
+            <div class="bill-row"><span>Subtotal</span> <span id="subtotal">₹0.00</span></div>
+            <div class="bill-row"><span>GST (18%)</span> <span id="gstAmount">₹0.00</span></div>
+            <hr>
+            <div class="bill-row total"><span>Total Bill</span> <span id="totalBill">₹0.00</span></div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
     </div>
-</div>
+
+    <script src="script.js"></script>
 </body>
 </html>

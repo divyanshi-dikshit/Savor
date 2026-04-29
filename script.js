@@ -1,15 +1,15 @@
 let cart = [];
 const foodData = [
-    { id: 1, name: "Avocado Toast", category: "Veg", price: 12.99, rating: 4.8, img: "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=500&h=700&fit=crop" },
-    { id: 2, name: "Spicy Beef Burger", category: "Non-Veg", price: 15.50, rating: 4.9, img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&h=500&fit=crop" },
-    { id: 3, name: "Berry Smoothie Bowl", category: "Desserts", price: 9.99, rating: 4.7, img: "https://images.unsplash.com/photo-1494597564530-871f2b93ac55?w=500&h=800&fit=crop" },
-    { id: 4, name: "Grilled Salmon", category: "Non-Veg", price: 24.00, rating: 4.9, img: "https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=500&h=600&fit=crop" },
-    { id: 5, name: "Matcha Latte", category: "Drinks", price: 5.50, rating: 5.0, img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&w=1000&auto=format&fit=crop" },
-    { id: 6, name: "Margherita Pizza", category: "Veg", price: 18.00, rating: 4.5, img: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&h=500&fit=crop" },
-    { id: 7, name: "Chocolate Lava Cake", category: "Desserts", price: 8.50, rating: 5.0, img: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=500&h=650&fit=crop" },
-    { id: 8, name: "Iced Caramel Macchiato", category: "Drinks", price: 6.00, rating: 4.8, img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&h=700&fit=crop" },
-    { id: 9, name: "Caesar Salad", category: "Veg", price: 11.00, rating: 4.4, img: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=500&h=550&fit=crop" },
-    { id: 10, name: "Chicken Tikka", category: "Non-Veg", price: 16.50, rating: 4.8, img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&h=500&fit=crop" }
+    { id: 1, name: "Avocado Toast", category: "Veg", price: 299, rating: 4.8, img: "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=500&h=700&fit=crop" },
+    { id: 2, name: "Spicy Beef Burger", category: "Non-Veg", price: 349, rating: 4.9, img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&h=500&fit=crop" },
+    { id: 3, name: "Berry Smoothie Bowl", category: "Desserts", price: 249, rating: 4.7, img: "https://images.unsplash.com/photo-1494597564530-871f2b93ac55?w=500&h=800&fit=crop" },
+    { id: 4, name: "Grilled Salmon", category: "Non-Veg", price: 599, rating: 4.9, img: "https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=500&h=600&fit=crop" },
+    { id: 5, name: "Matcha Latte", category: "Drinks", price: 149, rating: 5.0, img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&w=1000&auto=format&fit=crop" },
+    { id: 6, name: "Margherita Pizza", category: "Veg", price: 399, rating: 4.5, img: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&h=500&fit=crop" },
+    { id: 7, name: "Chocolate Lava Cake", category: "Desserts", price: 199, rating: 5.0, img: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=500&h=650&fit=crop" },
+    { id: 8, name: "Iced Caramel Macchiato", category: "Drinks", price: 179, rating: 4.8, img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&h=700&fit=crop" },
+    { id: 9, name: "Caesar Salad", category: "Veg", price: 249, rating: 4.4, img: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=500&h=550&fit=crop" },
+    { id: 10, name: "Chicken Tikka", category: "Non-Veg", price: 379, rating: 4.8, img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&h=500&fit=crop" }
 ];
 
 const grid = document.getElementById('masonryGrid');
@@ -59,15 +59,18 @@ function renderCards(data) {
                     <button class="view-btn">View Details</button>
                 </div>
             </div>
-            <div class="card-info" onclick="openModal(${item.id})">
-                <div class="card-title-row">
+            <div class="card-info">
+                <div class="card-title-row" onclick="openModal(${item.id})">
                     <h3 class="card-title">${item.name}</h3>
-                    <span class="card-price">$${item.price.toFixed(2)}</span>
+                    <span class="card-price">₹${item.price}</span>
                 </div>
-                <div class="card-meta">
+                <div class="card-meta" onclick="openModal(${item.id})">
                     <span class="category">${item.category}</span>
                     <span class="rating"><i class="fa-solid fa-star"></i> ${item.rating}</span>
                 </div>
+                <button class="card-order-btn" onclick="addToCart(${item.id}); event.stopPropagation();">
+                    <i class="fa-solid fa-shopping-bag"></i> Order Now
+                </button>
             </div>
         `;
         grid.appendChild(card);
@@ -109,7 +112,7 @@ window.openModal = (id) => {
     document.getElementById('modalImg').src = item.img;
     document.getElementById('modalTitle').textContent = item.name;
     document.getElementById('modalCategory').textContent = item.category;
-    document.getElementById('modalPrice').textContent = `$${item.price.toFixed(2)}`;
+    document.getElementById('modalPrice').textContent = `₹${item.price}`;
     
     const modalOrderBtn = document.querySelector('.modal-info .order-btn');
     
@@ -191,7 +194,6 @@ function addToCart(id) {
     cart.push(item);
     updateCartUI();
     showToast(`${item.name} added to cart! 🛒`);
-    modal.classList.remove('active');
 }
 
 function updateCartUI() {
@@ -202,7 +204,7 @@ function updateCartUI() {
     cartList.innerHTML = cart.map((item, index) => `
         <div class="bill-row">
             <span>${item.name}</span>
-            <span>$${item.price.toFixed(2)} 
+            <span>₹${item.price} 
                 <i class="fa-solid fa-trash" style="margin-left:10px; cursor:pointer; color:#ff385c" onclick="removeFromCart(${index})"></i>
             </span>
         </div>
@@ -212,9 +214,9 @@ function updateCartUI() {
     const gst = subtotal * 0.18;
     const total = subtotal + gst;
 
-    document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById('gstAmount').textContent = `$${gst.toFixed(2)}`;
-    document.getElementById('totalBill').textContent = `$${total.toFixed(2)}`;
+    document.getElementById('subtotal').textContent = `₹${subtotal.toFixed(2)}`;
+    document.getElementById('gstAmount').textContent = `₹${gst.toFixed(2)}`;
+    document.getElementById('totalBill').textContent = `₹${total.toFixed(2)}`;
 }
 
 window.removeFromCart = (index) => {
@@ -272,3 +274,66 @@ if (resForm) {
         }, 1500);
     });
 }
+
+// Payment Gateway Integration
+function openPaymentGateway() {
+    if (cart.length === 0) {
+        showToast("Cart is empty! Add items first 🛒");
+        return;
+    }
+
+    const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+    const gst = subtotal * 0.18;
+    const total = subtotal + gst;
+
+    // Create payment modal
+    const paymentModal = document.getElementById('paymentModal');
+    document.getElementById('paymentTotal').textContent = `₹${total.toFixed(2)}`;
+    paymentModal.classList.add('active');
+    
+    // Close cart sidebar when payment opens
+    cartSidebar.classList.remove('active');
+}
+
+// Payment form submission
+document.addEventListener('DOMContentLoaded', () => {
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    if (checkoutBtn) {
+        checkoutBtn.onclick = openPaymentGateway;
+    }
+
+    const paymentForm = document.getElementById('paymentForm');
+    if (paymentForm) {
+        paymentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const btn = paymentForm.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            
+            btn.textContent = "Processing Payment...";
+            btn.disabled = true;
+
+            // Simulate payment processing
+            setTimeout(() => {
+                document.getElementById('paymentModal').classList.remove('active');
+                showToast("Payment Successful! 🎉 Order Placed!");
+                
+                // Clear cart after successful payment
+                cart = [];
+                updateCartUI();
+                
+                btn.textContent = originalText;
+                btn.disabled = false;
+                paymentForm.reset();
+            }, 2500);
+        });
+    }
+
+    // Close payment modal
+    const closePayment = document.querySelector('.close-payment');
+    if (closePayment) {
+        closePayment.onclick = () => {
+            document.getElementById('paymentModal').classList.remove('active');
+        };
+    }
+});
