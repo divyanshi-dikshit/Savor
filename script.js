@@ -274,8 +274,6 @@ if (resForm) {
         }, 1500);
     });
 }
-
-// Payment Gateway Integration
 function openPaymentGateway() {
     if (cart.length === 0) {
         showToast("Cart is empty! Add items first 🛒");
@@ -286,16 +284,13 @@ function openPaymentGateway() {
     const gst = subtotal * 0.18;
     const total = subtotal + gst;
 
-    // Create payment modal
     const paymentModal = document.getElementById('paymentModal');
     document.getElementById('paymentTotal').textContent = `₹${total.toFixed(2)}`;
     paymentModal.classList.add('active');
     
-    // Close cart sidebar when payment opens
     cartSidebar.classList.remove('active');
 }
 
-// Payment form submission
 document.addEventListener('DOMContentLoaded', () => {
     const checkoutBtn = document.querySelector('.checkout-btn');
     if (checkoutBtn) {
@@ -313,12 +308,10 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.textContent = "Processing Payment...";
             btn.disabled = true;
 
-            // Simulate payment processing
             setTimeout(() => {
                 document.getElementById('paymentModal').classList.remove('active');
                 showToast("Payment Successful! 🎉 Order Placed!");
                 
-                // Clear cart after successful payment
                 cart = [];
                 updateCartUI();
                 
@@ -329,7 +322,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Close payment modal
     const closePayment = document.querySelector('.close-payment');
     if (closePayment) {
         closePayment.onclick = () => {

@@ -268,7 +268,6 @@ body {
 
 .rating i { color: #f5c518; }
 
-/* Order Now Button on Card */
 .card-order-btn {
     width: 100%;
     padding: 10px;
@@ -406,7 +405,6 @@ body {
     .search-container { width: 60%; }
 }
 
-/* Payment Modal Styles */
 .payment-modal-content {
     width: 90%;
     max-width: 500px;
