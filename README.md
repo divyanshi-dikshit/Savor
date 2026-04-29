@@ -5,6 +5,17 @@ A modern, visually stunning food discovery web application with a glassmorphic d
 ![Savor Preview](https://img.shields.io/badge/Version-1.0.0-ff385c)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
+---
+
+# 🍽️ Savor. — Modern Culinary Experience
+
+Savor is a premium, visual-first food discovery and reservation platform. 
+
+## 🔗 Live Link
+You can view the live project here: [https://savor-seven.vercel.app](https://savor-seven.vercel.app)
+
+---
+
 ## ✨ Features
 
 ### 🎨 Design & UI
@@ -34,6 +45,29 @@ A modern, visually stunning food discovery web application with a glassmorphic d
 - **Modal Details**: Click any dish for expanded view with full details
 - **Lazy Loading**: Optimized image loading for better performance
 
+---
+## 🖼️ Website Preview
+
+![image1](previewimages/preview1.png)
+
+---
+
+![image2](previewimages/preview2.png)
+
+---
+
+![image3](previewimages/preview3.png)
+
+---
+
+![image4](previewimages/preview4.png)
+
+---
+
+![image5](previewimages/preview5.png)
+
+---
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -56,7 +90,8 @@ savor/
 ├── style.css           # All styles and theme variables
 ├── script.js           # JavaScript logic and interactions
 ├── Savor..png          # Favicon (add your own)
-└── README.md           # Documentation
+├── README.md           # Documentation
+└──previewimages        # screenshots of website
 ```
 ## 📖 Usage Guide
 
