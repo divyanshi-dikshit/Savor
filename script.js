@@ -9,7 +9,8 @@ const foodData = [
     { id: 7, name: "Chocolate Lava Cake", category: "Desserts", price: 199, rating: 5.0, img: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=500&h=650&fit=crop" },
     { id: 8, name: "Iced Caramel Macchiato", category: "Drinks", price: 179, rating: 4.8, img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&h=700&fit=crop" },
     { id: 9, name: "Caesar Salad", category: "Veg", price: 249, rating: 4.4, img: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=500&h=550&fit=crop" },
-    { id: 10, name: "Chicken Tikka", category: "Non-Veg", price: 379, rating: 4.8, img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&h=500&fit=crop" }
+    { id: 10, name: "Chicken Tikka", category: "Non-Veg", price: 379, rating: 4.8, img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&h=500&fit=crop" },
+    { id: 11, name: "Adrak Chai", category: "Drinks", price: 20, rating: 4.8, img: "https://www.flavorsofmumbai.com/wp-content/uploads/2016/07/ginger-tea-recipe16.jpg?w=500&h=500&fit=crop" }
 ];
 
 const grid = document.getElementById('masonryGrid');
